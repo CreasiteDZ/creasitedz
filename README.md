@@ -1,157 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Commande de site web - CreasiteDZ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #0D1B2A;
-            color: white;
-            text-align: center;
-            padding: 20px 10px;
-        }
-        header h1 {
-            font-size: 2.2em;
-            font-family: 'Trebuchet MS', sans-serif;
-        }
-        .description {
-            background-color: #0D1B2A;
-            color: white;
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-        }
-        .description h2 {
-            margin-top: 0;
-        }
-        form {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        label {
-            display: block;
-            margin: 15px 0 5px;
-            background-color: #F5F5DC;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .question-oui-non {
-            margin-bottom: 10px;
-        }
-        .remarque {
-            margin: 30px 0;
-            background-color: #eee;
-            padding: 15px;
-            border-left: 5px solid #0D1B2A;
-        }
-        footer {
-            background-color: #0D1B2A;
-            color: white;
-            text-align: center;
-            padding: 15px 10px;
-            margin-top: 40px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CreasiteDZ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #002244;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 36px;
+      margin: 0;
+    }
+    .description {
+      border: 2px solid #002244;
+      padding: 20px;
+      margin: 20px;
+      background-color: white;
+    }
+    form {
+      background-color: white;
+      padding: 20px;
+      margin: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      background-color: #f5f0e6;
+      padding: 5px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .footer {
+      background-color: #002244;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .remarque {
+      margin: 20px;
+      padding: 10px;
+      background-color: #e0f7fa;
+      border-left: 4px solid #00796b;
+      font-style: italic;
+    }
+    .gallery {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: #fff;
+    }
+    .gallery img {
+      width: 30%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
-
-<header>
+  <header>
     <h1>CreasiteDZ</h1>
-</header>
+  </header>
 
-<div class="description">
-    <h2>Bienvenue chez CreasiteDZ</h2>
-    <p>Nous créons des sites web vitrines et e-commerce pour les petites boutiques et entreprises en Algérie. Veuillez remplir ce formulaire pour passer votre commande.</p>
-</div>
+  <div class="gallery">
+    <img src="/mnt/data/web-design-3411373_1280.webp" alt="Web Design" />
+    <img src="/mnt/data/code-1076536_1280.jpg" alt="Code HTML" />
+    <img src="/mnt/data/https-3344700_1280.webp" alt="HTTPS Secure" />
+  </div>
 
-<form>
-    <label>1. Nom complet :</label>
-    <input type="text" name="nom">
-    <label>2. Adresse e-mail :</label>
-    <input type="email" name="email">
-    <label>3. Numéro de téléphone :</label>
-    <input type="tel" name="telephone">
-    <label>4. Nom de votre boutique ou entreprise :</label>
-    <input type="text" name="nom_boutique">
-    <label>5. Adresse de votre boutique ou zone d'activité :</label>
-    <input type="text" name="adresse_boutique">
-    <label>6. Type de site web souhaité :</label>
+  <div class="description">
+    <p>Bienvenue sur CreasiteDZ ! Nous créons des sites web simples, professionnels et adaptés aux petites boutiques et projets e-commerce. Remplissez ce formulaire pour commander votre site. Vous recevrez une confirmation par email.</p>
+  </div>
+
+  <form>
+    <label>1 - Nom du projet :</label>
+    <input type="text" name="nom_projet" />
+    <label>2 - Description du projet :</label>
+    <textarea name="description_projet"></textarea>
+    <label>3 - Avez-vous un logo ?</label>
+    <select name="avez_logo">
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+    <label>Si Oui, ajoutez le logo :</label>
+    <input type="file" name="logo_file" />
+    <label>4 - Couleurs préférées :</label>
+    <input type="text" name="couleurs_pref" value="bleu foncé, blanc, beige chaud" />
+    <label>5 - Email professionnel à afficher (facultatif) :</label>
+    <input type="email" name="email_pro" />
+    <label>6 - Type de site souhaité :</label>
     <select name="type_site">
-        <option value="vitrine">Site vitrine</option>
-        <option value="ecommerce">Site e-commerce</option>
-        <option value="autre">Autre (précisez ci-dessous)</option>
+      <option>Site vitrine</option>
+      <option>Site e-commerce simple</option>
     </select>
-    <textarea placeholder="Autres besoins..." name="precisions_type"></textarea>
-    <label>7. Souhaitez-vous intégrer des moyens de paiement ?</label>
-    <div class="question-oui-non">
-        <input type="radio" name="paiement" value="oui"> Oui
-        <input type="radio" name="paiement" value="non"> Non
-    </div>
-    <textarea placeholder="Si oui, précisez les moyens souhaités..." name="details_paiement"></textarea>
-    <label>8. Avez-vous un logo ?</label>
-    <div class="question-oui-non">
-        <input type="radio" name="logo" value="oui"> Oui
-        <input type="radio" name="logo" value="non"> Non
-    </div>
-    <textarea placeholder="Vous pouvez ajouter un lien ou description..." name="logo_details"></textarea>
-    <label>9. Avez-vous un nom de domaine ?</label>
-    <div class="question-oui-non">
-        <input type="radio" name="domaine" value="oui"> Oui
-        <input type="radio" name="domaine" value="non"> Non
-    </div>
-    <textarea placeholder="Si oui, indiquez-le ici..." name="domaine_details"></textarea>
-    <label>10. Langues souhaitées pour votre site :</label>
-    <select multiple name="langues">
-        <option value="fr">Français</option>
-        <option value="ar">Arabe</option>
-        <option value="en">Anglais</option>
-        <option value="autre">Autres (précisez ci-dessous)</option>
+    <label>Autre besoin (précisez) :</label>
+    <input type="text" name="autre_type_site" />
+    <label>7 - Design souhaité :</label>
+    <input type="text" name="design_pref" placeholder="simple et élégant..." />
+    <label>8 - Nom de domaine déjà existant ?</label>
+    <select name="domaine_exist">
+      <option>Oui</option>
+      <option>Non</option>
     </select>
-    <textarea placeholder="Autres langues ou remarques..." name="langues_details"></textarea>
-    <label>11. Couleurs préférées pour le site :</label>
-    <input type="text" name="couleurs" placeholder="Exemple : bleu foncé, blanc, beige chaud">
-    <label>12. Souhaitez-vous que nous intégrions des images fournies par vous ?</label>
-    <div class="question-oui-non">
-        <input type="radio" name="images" value="oui"> Oui
-        <input type="radio" name="images" value="non"> Non
-    </div>
-    <textarea placeholder="Ajoutez les liens ou noms de fichiers si disponible..." name="details_images"></textarea>
-    <label>13. Liens de vos réseaux sociaux (facultatif) :</label>
-    <textarea name="reseaux" placeholder="Exemple : Facebook: facebook.com/votrepage, Instagram: instagram.com/votreprofil..."></textarea>
-    <div class="remarque">
-        ⚠️ Une fois votre commande envoyée, elle sera **confirmée par e-mail** par notre équipe à l'adresse que vous avez fournie.
-    </div>
-</form>
-
-<footer>
-    <p>Contact : creasitedz@example.com | Facebook : facebook.com/creasitedz | Instagram : @creasitedz | Tél : +213 123 456 789</p>
-</footer>
-
+    <label>Si Oui, précisez :</label>
+    <input type="text" name="domaine_info" />
+    <label>9 - Hébergement déjà disponible ?</label>
+    <select name="hebergement">
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+    <label>Si Oui, précisez :</label>
+    <input type="text" name="hebergement_info" />
+    <label>10 - Langues à inclure sur le site :</label>
+    <select multiple name="langues[]">
+      <option>Français</option>
+      <option>Anglais</option>
+      <option>Arabe</option>
+    </select>
+    <label>Autres langues (précisez) :</label>
+    <input type="text" name="autres_langues" />
+    <label>11 - Réseaux sociaux à afficher (facultatif) :</label>
+    <input type="text" name="social_facebook" placeholder="Lien Facebook" />
+    <input type="text" name="social_instagram" placeholder="Lien Instagram" />
+    <input type="text" name="social_autre" placeholder="Autres liens" />
+    <label>12 - Informations supplémentaires :</label>
+    <textarea name="infos_sup"></textarea>
+    <label>13 - Souhaitez-vous une version mobile optimisée ?</label>
+    <select name="version_mobile">
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+    <input type="submit" value="Envoyer la commande" />
+  </form>
+  <div class="remarque">
+    Remarque : Vous serez contacté par email pour confirmer votre commande. Merci pour votre confiance !
+  </div>
+  <div class="footer">
+    <p>Email : creasitedz@example.com | Facebook : CreasiteDZ | Instagram : @CreasiteDZ</p>
+    <p>Téléphone : +213 6 00 00 00 00</p>
+  </div>
 </body>
 </html>
