@@ -77,17 +77,14 @@
   <header>
     <h1>CreasiteDZ</h1>
   </header>
-
   <div class="gallery">
     <img src="/mnt/data/web-design-3411373_1280.webp" alt="Web Design" />
     <img src="/mnt/data/code-1076536_1280.jpg" alt="Code HTML" />
     <img src="/mnt/data/https-3344700_1280.webp" alt="HTTPS Secure" />
   </div>
-
   <div class="description">
     <p>Bienvenue sur CreasiteDZ ! Nous créons des sites web simples, professionnels et adaptés aux petites boutiques et projets e-commerce. Remplissez ce formulaire pour commander votre site. Vous recevrez une confirmation par email.</p>
   </div>
-
   <form>
     <label>1 - Nom du projet :</label>
     <input type="text" name="nom_projet" />
