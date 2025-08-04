@@ -87,7 +87,7 @@
   </div>
   <form id="commandeForm">
     <label>1 - Nom du projet :</label>
-    <input type="text" name="nom_projet" />
+    <input type="text" name="nom_projet" required />
     <label>2 - Description du projet :</label>
     <textarea name="description_projet"></textarea>
     <label>3 - Avez-vous un logo ?</label>
@@ -100,7 +100,7 @@
     <label>4 - Couleurs préférées :</label>
     <input type="text" name="couleurs_pref" value="bleu foncé, blanc, beige chaud" />
     <label>5 - Email professionnel à afficher (facultatif) :</label>
-    <input type="email" name="email_pro" />
+    <input type="email" name="email_pro" required />
     <label>6 - Type de site souhaité :</label>
     <select name="type_site">
       <option>Site vitrine</option>
@@ -125,7 +125,7 @@
     <label>Si Oui, précisez :</label>
     <input type="text" name="hebergement_info" />
     <label>10 - Langues à inclure sur le site :</label>
-    <select multiple name="langues[]">
+    <select multiple name="langues">
       <option>Français</option>
       <option>Anglais</option>
       <option>Arabe</option>
@@ -154,41 +154,32 @@
   </div>
 
   <script>
-    document.querySelector("#commandeForm").addEventListener("submit", async function (e) {
+    document.getElementById("commandeForm").addEventListener("submit", function (e) {
       e.preventDefault();
-
-      const form = e.target;
-      const formData = new FormData(form);
-      const data = {};
-
+      const formData = new FormData(this);
+      const object = {};
       formData.forEach((value, key) => {
-        if (data[key]) {
-          if (Array.isArray(data[key])) {
-            data[key].push(value);
-          } else {
-            data[key] = [data[key], value];
-          }
+        if (object[key]) {
+          object[key] += `, ${value}`;
         } else {
-          data[key] = value;
+          object[key] = value;
         }
       });
-
-      try {
-        const response = await fetch("https://script.google.com/macros/s/AKfycbwEWkDy-TixZ-OZnsdMVnNERGo_9anp_DfQUUDS1gW_Am6EXjZP9L1gvdRfMLJCCLit/exec", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json",
-          },
+      fetch("https://script.google.com/macros/s/AKfycbwEWkDy-TixZ-OZnsdMVnNERGo_9anp_DfQUUDS1gW_Am6EXjZP9L1gvdRfMLJCCLit/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(object),
+      })
+        .then(() => {
+          alert("Commande envoyée avec succès !");
+          document.getElementById("commandeForm").reset();
+        })
+        .catch((error) => {
+          alert("Erreur lors de l'envoi du formulaire : " + error.message);
         });
-
-        const result = await response.text();
-        alert("Commande envoyée avec succès !");
-        form.reset();
-      } catch (error) {
-        alert("Erreur lors de l’envoi du formulaire. Réessayez.");
-        console.error(error);
-      }
     });
   </script>
 </body>
