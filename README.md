@@ -85,7 +85,7 @@
   <div class="description">
     <p>Bienvenue sur CreasiteDZ ! Nous créons des sites web simples, professionnels et adaptés aux petites boutiques et projets e-commerce. Remplissez ce formulaire pour commander votre site. Vous recevrez une confirmation par email.</p>
   </div>
-  <form>
+  <form id="commandeForm">
     <label>1 - Nom du projet :</label>
     <input type="text" name="nom_projet" />
     <label>2 - Description du projet :</label>
@@ -152,5 +152,44 @@
     <p>Email : creasitedz@example.com | Facebook : CreasiteDZ | Instagram : @CreasiteDZ</p>
     <p>Téléphone : +213 6 00 00 00 00</p>
   </div>
+
+  <script>
+    document.querySelector("#commandeForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = {};
+
+      formData.forEach((value, key) => {
+        if (data[key]) {
+          if (Array.isArray(data[key])) {
+            data[key].push(value);
+          } else {
+            data[key] = [data[key], value];
+          }
+        } else {
+          data[key] = value;
+        }
+      });
+
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwEWkDy-TixZ-OZnsdMVnNERGo_9anp_DfQUUDS1gW_Am6EXjZP9L1gvdRfMLJCCLit/exec", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        const result = await response.text();
+        alert("Commande envoyée avec succès !");
+        form.reset();
+      } catch (error) {
+        alert("Erreur lors de l’envoi du formulaire. Réessayez.");
+        console.error(error);
+      }
+    });
+  </script>
 </body>
 </html>
