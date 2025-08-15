@@ -149,10 +149,9 @@
     Remarque : Vous serez contacté par email pour confirmer votre commande. Merci pour votre confiance !
   </div>
   <div class="footer">
-    <p>Email : creasitedz@example.com | Facebook : CreasiteDZ | Instagram : @CreasiteDZ</p>
+    <p>Email : creasitedz@gmail.com | Facebook : CreasiteDZ | Instagram : CreasiteDZ</p>
     <p>Téléphone : +213 6 00 00 00 00</p>
   </div>
-
   <script>
     document.getElementById("commandeForm").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -167,6 +166,7 @@
       });
 fetch("https://script.google.com/macros/s/AKfycbyMSvT9m8I2VPCsWDAwyHNYK4ifE48DOt_tW6v-Nd0ejG9uwN3oucTncFd5DHyyyYOz/exec", {
   method: "POST",
+  mode: "no-cors",
   headers: {
     "Content-Type": "application/json",
   },
