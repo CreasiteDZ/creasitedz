@@ -165,9 +165,8 @@
           object[key] = value;
         }
       });
-fetch("https://script.google.com/macros/s/AKfycbwEWkDy-TixZ-OZnsdMVnNERGo_9anp_DfQUUDS1gW_Am6EXjZP9L1gvdRfMLJCCLit/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyMSvT9m8I2VPCsWDAwyHNYK4ifE48DOt_tW6v-Nd0ejG9uwN3oucTncFd5DHyyyYOz/exec", {
   method: "POST",
-  mode: "cors",
   headers: {
     "Content-Type": "application/json",
   },
