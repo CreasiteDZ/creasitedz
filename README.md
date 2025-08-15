@@ -152,34 +152,34 @@
     <p>Email : creasitedz@gmail.com | Facebook : CreasiteDZ | Instagram : CreasiteDZ</p>
     <p>Téléphone : +213 6 00 00 00 00</p>
   </div>
-  <script>
-    document.getElementById("commandeForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
-      const object = {};
-      formData.forEach((value, key) => {
-        if (object[key]) {
-          object[key] += `, ${value}`;
-        } else {
-          object[key] = value;
-        }
-      });
-fetch("https://script.google.com/macros/s/AKfycbyMSvT9m8I2VPCsWDAwyHNYK4ifE48DOt_tW6v-Nd0ejG9uwN3oucTncFd5DHyyyYOz/exec", {
-  method: "POST",
-  mode: "cors",
-  headers: {
-    "Content-Type": "application/json",
-  },
-        body: JSON.stringify(object),
-      })
-        .then(() => {
-          alert("Commande envoyée avec succès !");
-          document.getElementById("commandeForm").reset();
-        })
-        .catch((error) => {
-          alert("Erreur lors de l'envoi du formulaire : " + error.message);
-        });
-    });
-  </script>
+<script>
+document.getElementById("commandeForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const jsonData = {};
+  formData.forEach((value, key) => {
+    if (jsonData[key]) {
+      if (!Array.isArray(jsonData[key])) {
+        jsonData[key] = [jsonData[key]];
+      }
+      jsonData[key].push(value);
+    } else {
+      jsonData[key] = value;
+    }
+  });
+  fetch("https://script.google.com/macros/s/AKfycbwEWkDy-TixZ-OZnsdMVnNERGo_9anp_DfQUUDS1gW_Am6EXjZP9L1gvdRfMLJCCLit/exec", {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(jsonData)
+  })
+  .then(() => {
+    alert("✅ Commande envoyée avec succès ! Vous recevrez un email de confirmation.");
+    document.getElementById("commandeForm").reset();
+  })
+  .catch(error => {
+    alert("❌ Erreur lors de l'envoi : " + error.message);
+  });
+});
+</script>
 </body>
 </html>
