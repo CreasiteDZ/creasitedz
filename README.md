@@ -86,7 +86,7 @@
     <p>Bienvenue sur CreasiteDZ ! Nous créons des sites web simples, professionnels et adaptés aux petites boutiques et projets e-commerce. Remplissez ce formulaire pour commander votre site. Vous recevrez une confirmation par email.</p>
   </div>
   <form id="commandeForm">
-    <label>1 - Nom du projet :</label>
+    <label>1 - Nom et prénom :</label>
     <input type="text" name="nom_projet" required />
     <label>2 - Description du projet :</label>
     <textarea name="description_projet"></textarea>
